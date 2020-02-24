@@ -1,21 +1,62 @@
-import React from 'react'
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import React, { Component } from 'react'
+import { BrowserRouter,
+    Switch,
+    Route  } from "react-router-dom";
 import allIngredients from './Home';
-import recipes from './Recipe';
+import all_recipes from './Recipe';
 import prepare from './Preparation';
-import navigation from "./Navigation"
+import menu_navigation from "./Navigation"
 
 
+const LOCAL_STORAGE_KEY ="cocktailapp.ingredients"
 
-export default function Router() {
-    return (
-        <BrowserRouter >
-            <navigation/>
-            <Switch>
-                <Route path="/Recipe" component={recipes}/>
-                <Route path="/Preparation/:id" component={prepare}/>
-                <Route path="/Home" component={allIngredients}/>
-            </Switch>
-        </BrowserRouter>
-    )
+export default class Router extends Component {
+
+    constructor (props){
+        super(props);
+        this.state = {
+            ingredients : [],
+            shopping: false
+        }
+    } 
+
+    componentDidMount(){
+        const storedIngredients = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+        if (storedIngredients) this.state.ingredients = storedIngredients
+        this.forceUpdate()
+    }
+
+    updateIngredients (input){
+        this.state.ingredients.push(input)
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.state.ingredients))
+        this.forceUpdate()
+    }
+
+    deleteIngredients (input){
+        this.state.ingredients.splice( this.state.ingredients.indexOf(input), 1 )
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.state.ingredients))
+        this.forceUpdate()
+    }
+
+    handleChangeShopping(){
+        this.state.shopping = !this.state.shopping
+        this.forceUpdate()
+    }
+
+
+    render() {
+        return (
+            <div>
+            <BrowserRouter >
+                <menu_navigation/>
+                    <Switch>
+                        <Route path="/Recipes" render={(props) => <all_recipes {...props}  shopping={this.state.shopping} ingredients={this.state.ingredients} />}/>
+                        <Route path="/Preparation/:id" component={prepare}/>
+                        <Route path="/" render={(props) => <allIngredients {...props} shopping={this.state.shopping} deleteIngredients={this.deleteIngredients.bind(this)} 
+                            ingredients={this.state.ingredients} updateIngredients={this.updateIngredients.bind(this)} handleChangeShopping={this.handleChangeShopping.bind(this)}/>}/>
+                    </Switch>
+            </BrowserRouter>
+            </div>
+        )
+    }
 }

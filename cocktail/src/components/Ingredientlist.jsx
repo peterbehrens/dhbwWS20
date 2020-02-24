@@ -1,9 +1,14 @@
 import React from 'react'
+import Ingred from "./Ingredients"
 
-export default function Ingredientlist() {
+export default function Ingredientlist(props) {
     return (
         <div>
-            List of all Ingredients
+            {props.ingredients.map(ingredient =>{
+                return(
+                    <Ingred deleteIngredient = {props.deleteIngredients} ingredient={ingredient}/>
+                )
+            })}
         </div>
     )
 }
