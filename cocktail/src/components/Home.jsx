@@ -10,7 +10,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 
 
 
-export default function allIngredients(props) {
+export default function AllIngredients(props) {
 
     const [values, setValues] = useState({
         ingredients : ""

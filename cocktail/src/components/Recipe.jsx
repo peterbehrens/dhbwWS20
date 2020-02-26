@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import prepare from "./Preparation";
+import Prepare from "./Preparation";
 import Grid from '@material-ui/core/Grid';
 
-export default class all_recipes extends Component {
+export default class All_recipes extends Component {
 
     constructor(props){
         super(props);
@@ -100,7 +100,7 @@ export default class all_recipes extends Component {
                 alignItems="center"
                 >
                     <Grid>
-                        <Rezept key={item.name} shopping={this.state.shopping} recipe = {item}/>
+                        <Prepare key={item.name} shopping={this.state.shopping} recipe = {item}/>
                     </Grid>
                 </Grid>
             )   

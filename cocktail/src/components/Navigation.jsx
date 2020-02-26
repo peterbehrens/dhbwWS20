@@ -4,7 +4,7 @@ import ListIcon from '@material-ui/icons/List';
 import IconButton from '@material-ui/core/IconButton';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import Grid from '@material-ui/core/Grid';
-import "./style.css"
+import ".././style.css"
 
 
 
