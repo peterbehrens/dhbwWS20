@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import Zutatenliste from "./Zutatenliste"
+import Ingredientlist from "./Ingredientlist";
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
-import Ingredientlist from './Ingredients';
 
 
 

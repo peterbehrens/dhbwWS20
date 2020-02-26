@@ -9,6 +9,7 @@ import menu_navigation from "./Navigation"
 
 
 const LOCAL_STORAGE_KEY ="cocktailapp.ingredients"
+const LOCAL_STORAGE_SHOPPING = "cocktailapp.shopping"
 
 export default class Router extends Component {
 
@@ -22,7 +23,9 @@ export default class Router extends Component {
 
     componentDidMount(){
         const storedIngredients = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+        const storedShopping = JSON.parse(localStorage.getItem(LOCAL_STORAGE_SHOPPING))
         if (storedIngredients) this.state.ingredients = storedIngredients
+        if (storedShopping) this.state.shopping = storedShopping
         this.forceUpdate()
     }
 
@@ -40,6 +43,7 @@ export default class Router extends Component {
 
     handleChangeShopping(){
         this.state.shopping = !this.state.shopping
+        localStorage.setItem(LOCAL_STORAGE_SHOPPING, JSON.stringify(this.state.shopping))
         this.forceUpdate()
     }
 
@@ -50,9 +54,9 @@ export default class Router extends Component {
             <BrowserRouter >
                 <menu_navigation/>
                     <Switch>
-                        <Route path="/Recipes" render={(props) => <all_recipes {...props}  shopping={this.state.shopping} ingredients={this.state.ingredients} />}/>
+                        <Route path="./Recipe" render={(props) => <all_recipes {...props}  shopping={this.state.shopping} ingredients={this.state.ingredients} />}/>
                         <Route path="/Preparation/:id" component={prepare}/>
-                        <Route path="/" render={(props) => <allIngredients {...props} shopping={this.state.shopping} deleteIngredients={this.deleteIngredients.bind(this)} 
+                        <Route path="./Home" render={(props) => <allIngredients {...props} shopping={this.state.shopping} deleteIngredients={this.deleteIngredients.bind(this)} 
                             ingredients={this.state.ingredients} updateIngredients={this.updateIngredients.bind(this)} handleChangeShopping={this.handleChangeShopping.bind(this)}/>}/>
                     </Switch>
             </BrowserRouter>
