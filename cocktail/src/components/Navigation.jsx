@@ -9,7 +9,7 @@ import ".././style.css"
 
 
 
-export default function menu_navigation({props}) {
+export default function Menu_navigation({props}) {
 
     return (
         <div>
@@ -23,7 +23,7 @@ export default function menu_navigation({props}) {
                     </IconButton>
                 </Grid>
                 <Grid>
-                    <IconButton color='inherit' aria-label="delete" component={Link} to={'/Recipes'}>
+                    <IconButton color='inherit' aria-label="delete" component={Link} to={'/Recipe'}>
                         <ListIcon />
                     </IconButton>
                 </Grid>

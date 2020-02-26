@@ -4,8 +4,8 @@ import { BrowserRouter,
     Route  } from "react-router-dom";
 import AllIngredients from './Home';
 import All_recipes from './Recipe';
-import Prepare from './Preparation';
-import menu_navigation from "./Navigation"
+import RecipeView from './RecipeView';
+import Menu_navigation from "./Navigation"
 
 
 const LOCAL_STORAGE_KEY ="cocktailapp.ingredients"
@@ -52,11 +52,11 @@ export default class Router extends Component {
         return (
             <div>
             <BrowserRouter >
-                <menu_navigation/>
+                <Menu_navigation/>
                     <Switch>
                         <Route path="./Recipe" render={(props) => <All_recipes {...props}  shopping={this.state.shopping} ingredients={this.state.ingredients} />}/>
-                        <Route path="/Preparation/:id" component={Prepare}/>
-                        <Route path="./Home" render={(props) => <AllIngredients {...props} shopping={this.state.shopping} deleteIngredients={this.deleteIngredients.bind(this)} 
+                        <Route path="/Preparation/:id" component={RecipeView}/>
+                        <Route path="/" render={(props) => <AllIngredients {...props} shopping={this.state.shopping} deleteIngredients={this.deleteIngredients.bind(this)} 
                             ingredients={this.state.ingredients} updateIngredients={this.updateIngredients.bind(this)} handleChangeShopping={this.handleChangeShopping.bind(this)}/>}/>
                     </Switch>
             </BrowserRouter>
