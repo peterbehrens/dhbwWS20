@@ -54,7 +54,7 @@ export default class Router extends Component {
             <BrowserRouter >
                 <Menu_navigation/>
                     <Switch>
-                        <Route path="./Recipe" render={(props) => <All_recipes {...props}  shopping={this.state.shopping} ingredients={this.state.ingredients} />}/>
+                        <Route path="/Recipe" render={(props) => <All_recipes {...props}  shopping={this.state.shopping} ingredients={this.state.ingredients} />}/>
                         <Route path="/Preparation/:id" component={RecipeView}/>
                         <Route path="/" render={(props) => <AllIngredients {...props} shopping={this.state.shopping} deleteIngredients={this.deleteIngredients.bind(this)} 
                             ingredients={this.state.ingredients} updateIngredients={this.updateIngredients.bind(this)} handleChangeShopping={this.handleChangeShopping.bind(this)}/>}/>
