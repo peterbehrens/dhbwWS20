@@ -1,12 +1,40 @@
 /* Style elements for Home.js */
-.button {
-
+* {
+    margin: 0px;
+    padding: 0px;
 }
-
-.wrapper {
-    
+body {
+/*    background-color: rgb(113, 198, 219); */
+    background-color: rgb(180, 207, 214);
 }
-
-.list {
-
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+#wrapper {
+    background-image: url("./images/tequila.jpg");
+    background-size: cover;
+    max-width: 100%;
+    height: auto;
+    padding: 2%;
+}
+.MuiButton-root {
+    width: 200px;
+}
+button.MuiButtonBase-root {
+    margin: 20px;
+}
+.prepare {
+    background-image: url("./images/cocktail_II.jpg");
+    background-size: cover;
+    padding: 15px 25px 15px 25px;
+}
+img.prepare {
+    opacity: 0.5;
+}
+#ingredients {
+    background-color: white;
+    width: 200px;
+    margin: 20px;
+    padding: 15px;
 }

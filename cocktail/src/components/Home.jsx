@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
+import ".././style.css";
 
 
 
@@ -30,29 +31,40 @@ export default function AllIngredients(props) {
 
     return (
     <React.Fragment>
-        
+    <div id="wrapper">
+        <table>
         <Grid container
         direction="column"
         justify="center"
         alignItems="center">
+            <tr>
             <Grid >
-                <TextField value={values.ingredients} onChange={handleChange("ingredients")} label="Zutat" variant="outlined" />
+                <td><TextField value={values.ingredients} onChange={handleChange("ingredients")} label="Zutat" variant="outlined" /></td>
             </Grid>
+            </tr>
+            <tr>
             <Grid >
-                <Button onClick={handleAddElement} variant="contained">Add</Button>
+                <td><Button onClick={handleAddElement} variant="contained">Add</Button></td>
             </Grid>
+            </tr>
+            <tr>
             <Grid >
-                <FormGroup>
+                <td><FormGroup>
                     <FormControlLabel
                         control={<Checkbox checked={props.shopping} onChange={props.handleChangeShopping}/>}
                         label="Do you want to go shopping?"
                         labelPlacement="Let's go!"
                     />
-            </FormGroup>
+                </FormGroup></td>
             </Grid>
+            </tr>
             
         </Grid>
-        <Ingredientlist ingredients={props.ingredients} deleteIngredients = {props.deleteIngredients}/>
+        <tr>
+        <td><Ingredientlist ingredients={props.ingredients} deleteIngredients = {props.deleteIngredients}/></td>
+        </tr>
+        </table>
+    </div>
     </React.Fragment>
     )
 }

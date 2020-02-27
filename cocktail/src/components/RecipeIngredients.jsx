@@ -30,7 +30,7 @@ export default function RecipeIngredients(props) {
 
     if(props.recipe){
         return(
-        <table >
+        <table id="ingredients">
         {createTable()}
       </table>
         )
