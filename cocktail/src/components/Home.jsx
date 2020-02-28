@@ -6,6 +6,8 @@ import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import ".././style.css";
 
 
@@ -39,7 +41,7 @@ export default function AllIngredients(props) {
         alignItems="center">
             <tr>
             <Grid >
-                <td><TextField value={values.ingredients} onChange={handleChange("ingredients")} label="Zutat" variant="outlined" /></td>
+                <td><TextField value={values.ingredients} onChange={handleChange("ingredients")} label="Ingredient" variant="outlined" /></td>
             </Grid>
             </tr>
             <tr>
@@ -47,13 +49,12 @@ export default function AllIngredients(props) {
                 <td><Button onClick={handleAddElement} variant="contained">Add</Button></td>
             </Grid>
             </tr>
-            <tr>
+            <tr id="shopping">
             <Grid >
                 <td><FormGroup>
                     <FormControlLabel
-                        control={<Checkbox checked={props.shopping} onChange={props.handleChangeShopping}/>}
+                        control={<Checkbox color="default" icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedH" />}
                         label="Do you want to go shopping?"
-                        labelPlacement="Let's go!"
                     />
                 </FormGroup></td>
             </Grid>
