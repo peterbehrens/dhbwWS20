@@ -1,4 +1,4 @@
-{
+{"recipes":{
     "Pinacolada":{
     "amount":"3 cl,4 cl,9 cl,1 cl",
     "description":"Alle Zutaten mit Eis in den Shaker geben und kräftig schütteln;Nach dem Shaken alles in ein großes Glas umfüllen;Zum Schluss nur noch nach Belieben mit aufgespießten Früchten garnieren.",
@@ -68,5 +68,6 @@
     "ingredients":"Wodka,Pfirsich Likör,Cranberrysaft,Orangensaft",
     "name":"Sex on the Beach",
     "steps":"Erstens,Zweitens,Drittens"
+    }
     }
     }

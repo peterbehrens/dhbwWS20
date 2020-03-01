@@ -3,10 +3,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 
-
-
-
-export default function Ingredientlist(props) {
+export default function Ingred(props) {
 
     const handleChange = event => {
         props.deleteIngredient(props.ingredient)

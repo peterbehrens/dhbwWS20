@@ -23,6 +23,8 @@ const StyledButton = withStyles(styles)(({ classes, color, ...other }) => (
   <Button className={classes.root} {...other} />
 ));
 
+//matching the recipes and the available ingrdients with the different colors
+
 export default function Prepare(props) {
   var color = "default"
 

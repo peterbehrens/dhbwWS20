@@ -9,6 +9,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ".././style.css";
 
+//Vertical Stepper from Material UI
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',

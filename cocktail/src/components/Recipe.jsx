@@ -13,6 +13,7 @@ export default class All_recipes extends Component {
             shopping : true
         }
     }
+    //Including Firebase Realtime Database where different recipes are stored
 
     componentDidMount(){
         this.getDatabaseUpdate()
@@ -21,7 +22,7 @@ export default class All_recipes extends Component {
     }
 
     getDatabaseUpdate(){
-        axios.get("https://dhbwws20.firebaseio.com/recipes.json").then(
+        axios.get("https://cocktail-app-f8080.firebaseio.com/recipes.json").then(
         response =>   {
             const fetchedOrders = [];
             for (let key in response.data){
